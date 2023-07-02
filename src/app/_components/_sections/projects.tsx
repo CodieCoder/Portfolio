@@ -1,17 +1,17 @@
-import React from "react";
-import Image from "next/image";
-import Section from "../_sectionContainer";
-import { SectionTypes } from "../_sectionContainer/constant";
-import HeroButton from "../_buttons/HeroButton";
-import { projectsList } from "./constants";
-import { IProjectsRender } from "./types";
+import React from "react"
+import Image from "next/image"
+import Section from "../_sectionContainer"
+import { SectionTypes } from "../_sectionContainer/constant"
+import HeroButton from "../_buttons/HeroButton"
+import { projectsList } from "./constants"
+import { IProjectsRender } from "./types"
 
 const ProjectRender: React.FC<IProjectsRender> = ({ projects }) => {
   return projects.map((project, index) => (
     <div className="font-semibold" key={index}>
       <Image
         src={project.screenshot}
-        alt="site1"
+        alt={project.name}
         className="rounded-lg border-4 border-transparent hover:border-teal-500"
       />
 
@@ -22,7 +22,7 @@ const ProjectRender: React.FC<IProjectsRender> = ({ projects }) => {
         <HeroButton
           className="ml-8  mt-4"
           onClick={() => {
-            window.open(`https://${project.webiste}`, "_blank");
+            window.open(`https://${project.webiste}`, "_blank")
           }}
         >
           View website
@@ -30,15 +30,15 @@ const ProjectRender: React.FC<IProjectsRender> = ({ projects }) => {
         <HeroButton
           className="ml-8 mt-4"
           onClick={() => {
-            window.open(`https://${project.github}`, "_blank");
+            window.open(`https://${project.github}`, "_blank")
           }}
         >
           View source
         </HeroButton>
       </div>
     </div>
-  ));
-};
+  ))
+}
 
 const Projects = () => {
   return (
@@ -51,7 +51,7 @@ const Projects = () => {
         <ProjectRender projects={projectsList} />
       </div>
     </Section.Container>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
