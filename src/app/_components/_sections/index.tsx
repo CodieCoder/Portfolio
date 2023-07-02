@@ -1,16 +1,16 @@
-import About from "./about";
-import HeroButton from "../_buttons/HeroButton";
-import Experience from "./experience";
-import Projects from "./projects";
-import Contact from "./contact";
-import Scroller from "./scroller";
+import About from "./about"
+import HeroButton from "../_buttons/HeroButton"
+import Experience from "./experience"
+import Projects from "./projects"
+import Contact from "./contact"
+import Scroller from "./scroller"
 
 const Body = () => {
   return (
     <div>
       <div className="flex min-h-screen pb-10">
         <div id="home" className="font-bold w-[90%] lg:w-4/6 m-auto">
-          <div className="text-teal-200 text-lg">Hi, my name is </div>
+          <div className="text-teal-200 text-lg">Hello, my name is </div>
           <br />
           <div className="text-gray-300 lg:text-5xl text-4xl">
             Chukwunonso Emmanuel Nnalue.
@@ -44,7 +44,7 @@ const Body = () => {
         &copy; {new Date().getFullYear()}. Chukwunonso E. Nnalue
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Body;
+export default Body
