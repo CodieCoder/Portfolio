@@ -1,6 +1,6 @@
-import { TechStackCategories } from "../_icons";
-import ProjectsScreenshotList from "../_icons/projects";
-import { ITechStacks } from "./types";
+import { TechStackCategories } from "../_icons"
+import ProjectsScreenshotList from "../_icons/projects"
+import { ITechStacks } from "./types"
 
 export enum TechStackEnum {
   All = "All",
@@ -60,7 +60,7 @@ export const ExperiencesList = [
       "Working in front-end using javascript, ReactJs and collaborating with the back-end team.",
     ],
   },
-];
+]
 
 export const techStack_head: ITechStacks[] = [
   {
@@ -78,7 +78,7 @@ export const techStack_head: ITechStacks[] = [
     md: "DB",
     stack: TechStackCategories.DB,
   },
-];
+]
 
 export const projectsList = [
   {
@@ -99,7 +99,7 @@ export const projectsList = [
     screenshot: ProjectsScreenshotList.Site3,
     github: "ultimatepremium",
   },
-];
+]
 
 export enum SocialIconsEnum {
   LinkedIn = "LinkedIn",
@@ -110,7 +110,7 @@ export enum SocialIconsEnum {
 export const SocialIconList = [
   {
     name: SocialIconsEnum.GitHub,
-    link: "github.com",
+    link: "github.com/CodieCoder",
     color: "hover:text-gray-100",
   },
   {
@@ -123,4 +123,4 @@ export const SocialIconList = [
     link: "twitter.com",
     color: "hover:text-sky-400",
   },
-];
+]
