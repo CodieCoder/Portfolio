@@ -25,7 +25,7 @@ export const ExperiencesList = [
     ],
   },
   {
-    year: "01/2022 - 05/2022",
+    year: "01/2020 - 05/2022",
     role: "Fullstack Developer",
     company: "Swiftrader",
     location: "Nigeria",
@@ -116,7 +116,7 @@ export const SocialIconList = [
   },
   {
     name: SocialIconsEnum.LinkedIn,
-    link: "linkedin.com/in/nonsonnalue/",
+    link: "linkedin.com/in/nonsonnalue",
     color: "hover:text-[#0a66c2]",
   },
   {
