@@ -96,7 +96,7 @@ export const projectsList = [
   },
   {
     name: "NASA Project",
-    webiste: "siteologyone.come",
+    webiste: "github.com/CodieCoder/NasaProject",
     screenshot: ProjectsScreenshotList.Site3,
     github: "github.com/CodieCoder/NasaProject",
   },
