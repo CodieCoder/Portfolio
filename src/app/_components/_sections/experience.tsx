@@ -1,8 +1,8 @@
-import React from "react";
-import Section from "../_sectionContainer";
-import { SectionTypes } from "../_sectionContainer/constant";
-import HeroButton from "../_buttons/HeroButton";
-import { ExperiencesList } from "./constants";
+import React from "react"
+import Section from "../_sectionContainer"
+import { SectionTypes } from "../_sectionContainer/constant"
+import HeroButton from "../_buttons/HeroButton"
+import { ExperiencesList } from "./constants"
 
 const Experience = () => {
   return (
@@ -19,8 +19,11 @@ const Experience = () => {
                 <div className="flex text-lg font-bold rounded-full bg-teal-400 w-16 h-9 lg:w-9 lg:h-9  items-center justify-center content-center">
                   {index + 1}
                 </div>
-                <div className="ml-2 lg:ml-5 text-2xl font-semibold text-teal-500">
-                  {experience.company}
+                <div className="ml-2 lg:ml-5 text-[1.2rem] font-semibold text-teal-400">
+                  <span>{experience.company} - </span>
+                  <span className="text-lg text-teal-600">
+                    {experience.location}
+                  </span>
                 </div>
                 <div className="ml-8 font-normal text-gray-300">
                   {experience.year}
@@ -55,12 +58,13 @@ const Experience = () => {
             </div>
           ))}
         </div>
+        <br />
         <div className="h-20 text-center mt-10 font-bold">
           <HeroButton>Download my resume</HeroButton>
         </div>
       </div>
     </Section.Container>
-  );
-};
+  )
+}
 
-export default Experience;
+export default Experience

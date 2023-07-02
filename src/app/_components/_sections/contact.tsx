@@ -1,15 +1,15 @@
-import React from "react";
-import Section from "../_sectionContainer";
-import { SectionTypes } from "../_sectionContainer/constant";
-import HeroButton from "../_buttons/HeroButton";
-import { SocialIconList } from "./constants";
-import { SocialIcons } from "../_icons/socials";
+import React from "react"
+import Section from "../_sectionContainer"
+import { SectionTypes } from "../_sectionContainer/constant"
+import HeroButton from "../_buttons/HeroButton"
+import { SocialIconList } from "./constants"
+import { SocialIcons } from "../_icons/socials"
 
 interface IFormInput {
-  name: string;
-  label: string;
-  value: string;
-  setValue: (value: string, name: string) => void;
+  name: string
+  label: string
+  value: string
+  setValue: (value: string, name: string) => void
 }
 
 const FormInput: React.FC<IFormInput> = ({ name, label, value, setValue }) => {
@@ -27,8 +27,8 @@ const FormInput: React.FC<IFormInput> = ({ name, label, value, setValue }) => {
         onChange={(event) => setValue(event.target.value, name)}
       />
     </div>
-  );
-};
+  )
+}
 
 const Contact = () => {
   const [formValues, setFormValues] = React.useState({
@@ -36,11 +36,11 @@ const Contact = () => {
     email: "",
     subject: "",
     message: "",
-  });
+  })
 
   const setValues = (value: string, name: string) => {
-    setFormValues((prev) => ({ ...prev, [name]: value }));
-  };
+    setFormValues((prev) => ({ ...prev, [name]: value }))
+  }
 
   return (
     <Section.Container id="contact" type={SectionTypes.Contact}>
@@ -96,12 +96,18 @@ const Contact = () => {
             <div className="text-lg font-bold text-gray-300">Contact Info</div>
             <div className="mt-10 w-[90%] m-auto font-semibold">
               <div className="text-teal-300 font-semibold">Email me at : </div>
-              <div className="text-gray-400">email@email.com</div>
-              <div className="text-gray-400">email@email.com</div>
+              <div className="text-gray-400">
+                <a href="mailto:nonso4emma@yahoo.com">nonso4emma@yahoo.com</a>
+              </div>
+              <div className="text-gray-400">
+                <a href="mailto:nnalue.nonso@gmail.com">
+                  nnalue.nonso@gmail.com
+                </a>
+              </div>
             </div>
             <div className="mt-10 w-[90%] m-auto font-semibold">
               <div className="text-teal-300 font-semibold">Call me at : </div>
-              <div className="text-gray-400">+23409090909</div>
+              <div className="text-gray-400">+2347033918932</div>
             </div>
             <div className="flex mt-10">
               {SocialIconList.map((icon, index) => (
@@ -120,7 +126,7 @@ const Contact = () => {
         </div>
       </div>
     </Section.Container>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
