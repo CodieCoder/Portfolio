@@ -32,7 +32,7 @@ export const ExperiencesList = [
     activities: [
       "Developed/maintained several websites",
       "Integrated several APIs to fetch external resources.",
-      "Upgraded websites from landing page to full websits.",
+      "Upgraded websites from landing page to full websites.",
       "Worked with PHP (vanilla), Javascript, Jquery, Bootstrap, HTML, CSS and MySQL",
       "Integrated MySQL database system for data storage",
     ],
