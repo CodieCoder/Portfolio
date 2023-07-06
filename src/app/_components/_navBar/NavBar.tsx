@@ -1,12 +1,12 @@
-"use client";
-import React from "react";
-import Menus from "./Menus";
-import ToggleButton from "./ToggleButton";
-import useGlobalProvider from "@/app/_provider";
-import { AnimatedHead } from "./constants";
+"use client"
+import React from "react"
+import Menus from "./Menus"
+import ToggleButton from "./ToggleButton"
+import useGlobalProvider from "@/app/_provider"
+import { AnimatedHead } from "./constants"
 
 export const NavBar = () => {
-  const { isNavbarOpen, baseUrl } = useGlobalProvider();
+  const { isNavbarOpen, baseUrl } = useGlobalProvider()
 
   const HeaderSlider = () => {
     return (
@@ -20,8 +20,8 @@ export const NavBar = () => {
           ))}
         </span>
       </h4>
-    );
-  };
+    )
+  }
 
   return (
     <nav className="w-full bg-gray-800 shadow fixed top-0 left-0 right-0">
@@ -46,5 +46,5 @@ export const NavBar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}

@@ -4,6 +4,7 @@ import Experience from "./experience"
 import Projects from "./projects"
 import Contact from "./contact"
 import Scroller from "./scroller"
+import Certifications from "./certifications"
 
 const Body = () => {
   return (
@@ -38,9 +39,10 @@ const Body = () => {
       <About />
       <Experience />
       <Projects />
+      <Certifications />
       <Contact />
       <Scroller />
-      <div className="mt-10 bottom-0 p-2 bg-gray-900 text-center w-full text-teal-200 text-sm">
+      <div className=" bottom-0 p-2 bg-gray-900 text-center w-full text-teal-200 text-sm">
         &copy; {new Date().getFullYear()}. Chukwunonso E. Nnalue
       </div>
     </div>

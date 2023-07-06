@@ -1,5 +1,6 @@
 import { TechStackCategories } from "../_icons"
 import ProjectsScreenshotList from "../_icons/projects"
+import SchoolsLogo from "../_icons/schools"
 import { ITechStacks } from "./types"
 
 export enum TechStackEnum {
@@ -26,7 +27,7 @@ export const ExperiencesList = [
   },
   {
     year: "01/2020 - 05/2022",
-    role: "Fullstack Developer",
+    role: "Fullstack Engineer",
     company: "Freelance",
     location: "Remote",
     activities: [
@@ -39,7 +40,7 @@ export const ExperiencesList = [
   },
   {
     year: "03/2014 - 09/2019",
-    role: "Fullstack Developer",
+    role: "Fullstack Engineer",
     company: "Prolifike Technology",
     location: "Nigeria",
     activities: [
@@ -52,7 +53,7 @@ export const ExperiencesList = [
   },
   {
     year: "2008 - 2013",
-    role: "Fullstack Developer",
+    role: "IT Personnel",
     company: "Clementus Enterprise",
     location: "Nigeria",
     activities: [
@@ -124,5 +125,36 @@ export const SocialIconList = [
     name: SocialIconsEnum.Twitter,
     link: "twitter.com/SuperKindaBreed",
     color: "hover:text-sky-400",
+  },
+]
+
+export const CertificationList = [
+  {
+    name: "NestJs : The Complete Developer's Guide",
+    school: "Udemy",
+    date: "July 2023",
+    link: "https://www.udemy.com/certificate/UC-1dd69971-077b-49a0-a1f4-fd3845da4a03",
+    logo: SchoolsLogo.Udemy,
+  },
+  {
+    name: "NodeJs: Complete Nodejs Developer in 2023",
+    school: "Udemy",
+    date: "January 2023",
+    link: "https://www.udemy.com/certificate/UC-fd0b8742-2d12-4dd6-a86b-104770c249ff/",
+    logo: SchoolsLogo.Udemy,
+  },
+  {
+    name: "Getting Started with NodeJs",
+    school: "Simplilearn",
+    date: "October 2022",
+    link: "https://simpli.app.link/e/LFhdRjivsub",
+    logo: SchoolsLogo.Simplilearn,
+  },
+  {
+    name: "ReactJs for Beginners",
+    school: "Simplilearn",
+    date: "August 2022",
+    link: "https://simpli.app.link/e/sm3HJEebAsb",
+    logo: SchoolsLogo.Simplilearn,
   },
 ]
