@@ -4,15 +4,24 @@ import { SectionTypes } from "../_sectionContainer/constant"
 import HeroButton from "../_buttons/HeroButton"
 import { SocialIconList } from "./constants"
 import { SocialIcons } from "../_icons/socials"
+import { IMessage } from "@/api/visit/constants"
+import useGlobalProvider from "@/app/_provider"
 
 interface IFormInput {
   name: string
   label: string
   value: string
   setValue: (value: string, name: string) => void
+  loading: boolean
 }
 
-const FormInput: React.FC<IFormInput> = ({ name, label, value, setValue }) => {
+const FormInput: React.FC<IFormInput> = ({
+  name,
+  label,
+  value,
+  setValue,
+  loading,
+}) => {
   return (
     <div className="relative mt-5 text-gray-300 font-semibold">
       <label className="text-lg" htmlFor={label}>
@@ -25,21 +34,42 @@ const FormInput: React.FC<IFormInput> = ({ name, label, value, setValue }) => {
         id={label}
         value={value}
         onChange={(event) => setValue(event.target.value, name)}
+        disabled={loading}
       />
     </div>
   )
 }
 
 const Contact = () => {
-  const [formValues, setFormValues] = React.useState({
+  const [formValues, setFormValues] = React.useState<IMessage>({
     name: "",
     email: "",
     subject: "",
     message: "",
   })
+  const [formError, setFormError] = React.useState(false)
 
   const setValues = (value: string, name: string) => {
     setFormValues((prev) => ({ ...prev, [name]: value }))
+  }
+  const { sendMessage, sendMessageLoading } = useGlobalProvider()
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    setFormError(false)
+    e.preventDefault()
+    //minimalistic form checker...needs improvement
+    if (
+      formValues.email.length < 5 ||
+      formValues.message.length < 15 ||
+      formValues.name.length < 4 ||
+      formValues.subject.length < 4
+    ) {
+      setFormError(true)
+      return
+    } else {
+      //send message
+      sendMessage(formValues)
+    }
   }
 
   return (
@@ -48,31 +78,40 @@ const Contact = () => {
       <br />
       <Section.Title className="pt-10 text-4xl">Contact Me</Section.Title>
       <hr className="w-4/6 lg:w-3/12 border-teal-700 mt-6" />
-      <div className="mt-10">
-        <div className="lg:flex bg-black/[0.5] m-auto w-[98%] lg:w-[70%]">
-          <div className="p-5 lg:w-[70%] m-auto">
+      <div className="mt-10 pb-10">
+        <div className="lg:flex bg-black/[0.5] m-auto w-[98%]  lg:w-[55rem]">
+          <div className="p-5 w-[90%] lg:w-[70%] m-auto">
+            {formError ? (
+              <div className="m-auto text-center text-red-400">
+                Error. Please fill the form correctly.
+              </div>
+            ) : null}
             <form
               className="justify-items-center"
               data-netlify="true"
               name="contactMe"
+              onSubmit={onSubmit}
             >
               <FormInput
                 name={"name"}
                 label="Name"
                 setValue={setValues}
                 value={formValues.name}
+                loading={sendMessageLoading}
               />
               <FormInput
                 name={"email"}
                 label="Email"
                 setValue={setValues}
                 value={formValues.email}
+                loading={sendMessageLoading}
               />
               <FormInput
                 name={"subject"}
                 label="Subject"
                 setValue={setValues}
                 value={formValues.subject}
+                loading={sendMessageLoading}
               />
               <br />
               <div className="relative mt-5 text-gray-300 font-semibold">
@@ -84,11 +123,15 @@ const Contact = () => {
                   className="mt-5 bg-transparent border-b-2 outline-none border-teal-800 focus:border-teal-400 w-[80%]"
                   id="message-0978"
                   rows={3}
+                  value={formValues.message}
+                  onChange={(e) => setValues(e.target.value, "message")}
                 ></textarea>
               </div>
               <br />
               <div className="text-center m-auto">
-                <HeroButton className="w-[70%]">Send message</HeroButton>
+                <HeroButton className="w-[70%]" loading={sendMessageLoading}>
+                  Send message
+                </HeroButton>
               </div>
             </form>
           </div>

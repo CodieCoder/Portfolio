@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import React from "react";
-import { NavBar } from "./_components/_navBar/NavBar";
-import GlobalProvider from "./_provider/Provider";
+import React from "react"
+import { NavBar } from "./_components/_navBar/NavBar"
+import GlobalProvider from "./_provider/Provider"
 
 const Main: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
@@ -12,7 +12,7 @@ const Main: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <div className="w-full bg-gray-800 m-auto mt-12">{children}</div>
       </div>
     </GlobalProvider>
-  );
-};
+  )
+}
 
-export default Main;
+export default Main

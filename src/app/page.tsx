@@ -1,11 +1,12 @@
-"use client";
+"use client"
 
-import Body from "./_components/_sections";
+import Body from "./_components/_sections"
 
-export default function Home() {
+const Home = () => {
   return (
     <main className="w-full">
       <Body />
     </main>
-  );
+  )
 }
+export default Home

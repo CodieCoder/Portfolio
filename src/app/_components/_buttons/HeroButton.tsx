@@ -1,9 +1,9 @@
-import React from "react";
-import { HeroButton_ClassName } from "./constants";
+import React from "react"
+import { HeroButton_ClassName } from "./constants"
 
 interface IHeroButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  loading?: boolean;
-  children: React.ReactNode;
+  loading?: boolean
+  children: React.ReactNode
 }
 
 const HeroButton: React.FC<IHeroButton> = (props) => {
@@ -13,10 +13,11 @@ const HeroButton: React.FC<IHeroButton> = (props) => {
       className={`${HeroButton_ClassName.join(",")} ${
         props.className ? props.className : ""
       }`}
+      disabled={props.loading}
     >
-      {props.children}
+      {props.loading ? "Loading" : props.children}
     </button>
-  );
-};
+  )
+}
 
-export default HeroButton;
+export default HeroButton
