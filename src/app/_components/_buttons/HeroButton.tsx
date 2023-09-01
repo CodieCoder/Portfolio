@@ -15,7 +15,7 @@ const HeroButton: React.FC<IHeroButton> = (props) => {
       }`}
       disabled={props.loading}
     >
-      {props.loading ? "Loading" : props.children}
+      {props?.loading ? "Loading" : props.children}
     </button>
   )
 }

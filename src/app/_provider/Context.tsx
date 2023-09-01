@@ -10,4 +10,7 @@ export const GlobalContext = React.createContext<IGlobalContext>({
     new Promise((resolve) => resolve)
   },
   sendMessageLoading: false,
+  showNotification: false,
+  setShowNotification: () => {},
+  setShowAlert: () => {},
 })

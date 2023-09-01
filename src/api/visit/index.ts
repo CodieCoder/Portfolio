@@ -11,7 +11,9 @@ export enum AccessTokenEnum {
  */
 const ApiClient = axios.create({
   // baseURL: process.env.NEXT_PUBLIC_SERVER_URL,
-  baseURL: "https://wandering-red-jeans.cyclic.app",
+  baseURL:
+    process.env.NEXT_PUBLIC_SERVER_URL ||
+    "https://wandering-red-jeans.cyclic.app",
   headers: { "Content-Type": "application/json" },
 })
 

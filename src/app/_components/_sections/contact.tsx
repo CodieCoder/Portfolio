@@ -6,6 +6,8 @@ import { SocialIconList } from "./constants"
 import { SocialIcons } from "../_icons/socials"
 import { IMessage } from "@/api/visit/constants"
 import useGlobalProvider from "@/app/_provider"
+import useNotification from "../_notification/useNotification"
+import Alert from "../_alert"
 
 interface IFormInput {
   name: string
@@ -13,6 +15,13 @@ interface IFormInput {
   value: string
   setValue: (value: string, name: string) => void
   loading: boolean
+}
+
+const initialState = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
 }
 
 const FormInput: React.FC<IFormInput> = ({
@@ -41,20 +50,18 @@ const FormInput: React.FC<IFormInput> = ({
 }
 
 const Contact = () => {
-  const [formValues, setFormValues] = React.useState<IMessage>({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
+  const [formValues, setFormValues] = React.useState<IMessage>(initialState)
   const [formError, setFormError] = React.useState(false)
 
   const setValues = (value: string, name: string) => {
     setFormValues((prev) => ({ ...prev, [name]: value }))
   }
-  const { sendMessage, sendMessageLoading } = useGlobalProvider()
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const { sendMessage, sendMessageLoading, showAlert, setShowAlert } =
+    useGlobalProvider()
+  const Notify = useNotification()
+
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setFormError(false)
     e.preventDefault()
     //minimalistic form checker...needs improvement
@@ -68,8 +75,14 @@ const Contact = () => {
       return
     } else {
       //send message
-      sendMessage(formValues)
+      Notify.Success("Message successfully sent")
+      await sendMessage(formValues)
+      setFormValues(initialState)
     }
+  }
+
+  const closeAlert = () => {
+    setShowAlert(undefined)
   }
 
   return (
@@ -81,6 +94,17 @@ const Contact = () => {
       <div className="mt-10 pb-10">
         <div className="lg:flex bg-black/[0.5] m-auto w-[98%]  lg:w-[55rem]">
           <div className="p-5 w-[90%] lg:w-[70%] m-auto">
+            {showAlert ? (
+              <Alert
+                type={showAlert.isSuccess ? "success" : "error"}
+                showAlert={showAlert !== undefined}
+                setShowAlert={closeAlert}
+              >
+                {showAlert.isSuccess
+                  ? "Message sent. Thank you for your feedback"
+                  : "An error ocured. Message not sent."}
+              </Alert>
+            ) : null}
             {formError ? (
               <div className="m-auto text-center text-red-400">
                 Error. Please fill the form correctly.

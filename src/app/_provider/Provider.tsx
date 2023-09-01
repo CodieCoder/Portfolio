@@ -17,13 +17,17 @@ const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
   const [baseUrl, setBaseUrl] = React.useState("/")
   const [deviceInfo, setDeviceInfo] = React.useState<IDeviceInfo>()
   const [sendMessageLoading, setSendMessageLoading] = React.useState(false)
+  const [showNotification, setShowNotification] = React.useState(false)
+  const [showAlert, setShowAlert] = React.useState<
+    { isSuccess: boolean } | undefined
+  >()
 
   //Nav bar toggler (for mobile)
   const navBarToggler = () => setIsNavbarOpen((prev) => !prev)
 
   const memoValues = React.useMemo(
-    () => ({ isNavbarOpen, baseUrl }),
-    [isNavbarOpen, baseUrl]
+    () => ({ isNavbarOpen, baseUrl, showAlert }),
+    [isNavbarOpen, baseUrl, showAlert]
   )
 
   const identifyUser = async (deviceInfo: IDeviceInfo) => {
@@ -48,12 +52,27 @@ const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
    * @description - sends message to the app to the server
    * @returns - true or false.
    */
-  const sendMessage = (messageObject: IMessage) => {
+  const sendMessage = async (messageObject: IMessage) => {
     setSendMessageLoading(true)
     const device = deviceInfo!
-    apiPost(EndpointEnum.message, messageObject, device).finally(() => {
-      setSendMessageLoading(false)
-    })
+    await apiPost(EndpointEnum.message, messageObject, device)
+      .then((data) =>
+        data
+          ? setShowAlert({
+              isSuccess: true,
+            })
+          : setShowAlert({
+              isSuccess: false,
+            })
+      )
+      .catch(() =>
+        setShowAlert({
+          isSuccess: false,
+        })
+      )
+      .finally(() => {
+        setSendMessageLoading(false)
+      })
   }
 
   React.useEffect(() => {
@@ -76,6 +95,9 @@ const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
         addInteraction,
         sendMessage,
         sendMessageLoading,
+        showNotification,
+        setShowNotification,
+        setShowAlert,
       }}
     >
       {children}
