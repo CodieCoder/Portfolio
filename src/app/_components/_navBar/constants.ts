@@ -19,6 +19,6 @@ export const MenuItems = [
     title: "Contact Me",
     link: "#contact",
   },
-]
+];
 
-export const AnimatedHead = ["Innovative", "Front-end", "Back-end"]
+export const AnimatedHead = ["AI", "Front-end", "Back-end"];
