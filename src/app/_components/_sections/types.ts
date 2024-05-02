@@ -14,10 +14,12 @@ export interface ITechStacks {
 }
 
 export interface IProjectsRender {
-  projects: {
-    name: string;
-    webiste: string;
-    screenshot: StaticImageData;
-    github: string;
-  }[];
+  projects: IProjectList[];
+}
+
+export interface IProjectList {
+  name: string;
+  website: string;
+  screenshot: StaticImageData;
+  github: string;
 }

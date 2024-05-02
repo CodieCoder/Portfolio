@@ -105,9 +105,8 @@ const About: React.FC = () => {
           also provide a delightful user experience. Whether it's optimizing
           performance, implementing scalable architectures, or staying
           up-to-date with the latest industry trends, I am dedicated to pushing
-          the boundaries of what's possible in web development. I look forward
-          to utilizing my skills and experience to create impactful solutions
-          that actually make a difference in people's lives.
+          the boundaries of what's possible in software development. I am open
+          to new opportunites and challenges.
           <br />
           <br />
           <a href='#experience'>

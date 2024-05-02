@@ -1,7 +1,7 @@
-import { TechStackCategories } from "../_icons"
-import ProjectsScreenshotList from "../_icons/projects"
-import SchoolsLogo from "../_icons/schools"
-import { ITechStacks } from "./types"
+import { TechStackCategories } from "../_icons";
+import ProjectsScreenshotList from "../_icons/projects";
+import SchoolsLogo from "../_icons/schools";
+import { IProjectList, ITechStacks } from "./types";
 
 export enum TechStackEnum {
   All = "All",
@@ -63,7 +63,7 @@ export const ExperiencesList = [
       "Installation and maintenance of computer networking.",
     ],
   },
-]
+];
 
 export const techStack_head: ITechStacks[] = [
   {
@@ -81,28 +81,34 @@ export const techStack_head: ITechStacks[] = [
     md: "DB",
     stack: TechStackCategories.DB,
   },
-]
+];
 
-export const projectsList = [
+export const projectsList: IProjectList[] = [
   {
     name: "Cryptowise",
-    webiste: "cryptowise.netlify.app",
+    website: "cryptowise.netlify.app",
     screenshot: ProjectsScreenshotList.Site1,
     github: "github.com/CodieCoder/cryptoIntel",
   },
   {
+    name: "AmarAI",
+    website: "amar-ai.vercel.app",
+    screenshot: ProjectsScreenshotList.Site4,
+    github: "github.com/CodieCoder/amarAI-UI",
+  },
+  {
     name: "KryptoIntel",
-    webiste: "kryptointel.netlify.app/",
+    website: "kryptointel.netlify.app/",
     screenshot: ProjectsScreenshotList.Site2,
     github: "github.com/CodieCoder/kryptoIntel-Blockchain",
   },
   {
     name: "NASA Project",
-    webiste: "github.com/CodieCoder/NasaProject",
+    website: "github.com/CodieCoder/NasaProject",
     screenshot: ProjectsScreenshotList.Site3,
     github: "github.com/CodieCoder/NasaProject",
   },
-]
+];
 
 export enum SocialIconsEnum {
   LinkedIn = "LinkedIn",
@@ -126,7 +132,7 @@ export const SocialIconList = [
     link: "twitter.com/SuperKindaBreed",
     color: "hover:text-sky-400",
   },
-]
+];
 
 export const CertificationList = [
   {
@@ -157,4 +163,4 @@ export const CertificationList = [
     link: "https://simpli.app.link/e/sm3HJEebAsb",
     logo: SchoolsLogo.Simplilearn,
   },
-]
+];
