@@ -2,7 +2,7 @@ import React from "react";
 import Section from "../_sectionContainer";
 import { SectionTypes } from "../_sectionContainer/constant";
 import HeroButton from "../_buttons/HeroButton";
-import { ExperiencesList } from "./constants";
+import { CV_LINK, ExperiencesList } from "./constants";
 
 const Experience = () => {
   return (
@@ -62,10 +62,7 @@ const Experience = () => {
         </div>
         <br />
         <div className='h-20 text-center mt-10 font-bold'>
-          <a
-            href='https://github.com/CodieCoder/CV/blob/cc67f9ca7b7a1a346748ad1e5106c81c89e8c08e/CV%20-%20Nonso%20Nnlaue.pdf'
-            target='_blank'
-          >
+          <a href={CV_LINK} target='_blank'>
             <HeroButton>Download my resume</HeroButton>
           </a>
         </div>

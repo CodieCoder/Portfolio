@@ -26,7 +26,7 @@ export const ExperiencesList = [
     ],
   },
   {
-    year: "01/2020 - 05/2022",
+    year: "01/2020 - Presnt",
     role: "Fullstack Engineer",
     company: "Freelance",
     location: "Remote",
@@ -164,3 +164,5 @@ export const CertificationList = [
     logo: SchoolsLogo.Simplilearn,
   },
 ];
+
+export const CV_LINK = "https://github.com/CodieCoder/CV";
