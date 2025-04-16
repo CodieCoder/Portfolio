@@ -85,6 +85,12 @@ export const techStack_head: ITechStacks[] = [
 
 export const projectsList: IProjectList[] = [
   {
+    name: "ComSquad",
+    website: "https://com-squad.vercel.app/",
+    screenshot: ProjectsScreenshotList.Site5,
+    github: "github.com/CodieCoder/email-assistant-bot",
+  },
+  {
     name: "Cryptowise",
     website: "cryptowise.netlify.app",
     screenshot: ProjectsScreenshotList.Site1,
