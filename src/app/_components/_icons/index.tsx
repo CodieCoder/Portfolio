@@ -16,6 +16,7 @@ import ExpressJs from "@/app/icons/techStack/express.png";
 import MySQL from "@/app/icons/techStack/mysql.png";
 import PostgreSql from "@/app/icons/techStack/postgresql.png";
 import MongoDB from "@/app/icons/techStack/mongodb.png";
+import PYTHON from "@/app/icons/techStack/python.png";
 
 enum TechStackEnum {
   All = "All",
@@ -39,10 +40,11 @@ export const TechStackCategories = {
     { name: "NodeJs", icon: NodeJs, type: TechStackEnum.Backend },
     { name: "NestJs", icon: NestJs, type: TechStackEnum.Backend },
     { name: "PHP", icon: PHP, type: TechStackEnum.Backend },
+    { name: "Python", icon: PYTHON, type: TechStackEnum.Backend },
     { name: "ExpressJs", icon: ExpressJs, type: TechStackEnum.Backend },
     { name: "MySQL", icon: MySQL, type: TechStackEnum.Database },
     { name: "PostgreSql", icon: PostgreSql, type: TechStackEnum.Database },
-    { name: "MongoDB", icon: MongoDB, type: TechStackEnum.Database },
+    // { name: "MongoDB", icon: MongoDB, type: TechStackEnum.Database },
   ],
   FE: [
     { name: "AntDesign", icon: AntDesign, type: TechStackEnum.Frontend },
@@ -51,7 +53,7 @@ export const TechStackCategories = {
     { name: "NextJs", icon: NextJs, type: TechStackEnum.Frontend },
     { name: "ReactJs", icon: ReactJs, type: TechStackEnum.Frontend },
     { name: "JQuery", icon: JQuery, type: TechStackEnum.Frontend },
-    { name: "HTML", icon: Html, type: TechStackEnum.Frontend },
+    // { name: "HTML", icon: Html, type: TechStackEnum.Frontend },
     { name: "CSS", icon: Css, type: TechStackEnum.Frontend },
     { name: "Sass", icon: Sass, type: TechStackEnum.Frontend },
     { name: "Less", icon: Less, type: TechStackEnum.Frontend },
@@ -59,6 +61,7 @@ export const TechStackCategories = {
   ],
   BE: [
     { name: "NodeJs", icon: NodeJs, type: TechStackEnum.Backend },
+    { name: "Python", icon: PYTHON, type: TechStackEnum.Backend },
     { name: "NestJs", icon: NestJs, type: TechStackEnum.Backend },
     { name: "PHP", icon: PHP, type: TechStackEnum.Backend },
     { name: "ExpressJs", icon: ExpressJs, type: TechStackEnum.Backend },
