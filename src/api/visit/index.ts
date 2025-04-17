@@ -10,15 +10,13 @@ export enum AccessTokenEnum {
  * from the localStorage and if there's none, requests for one.
  */
 const ApiClient = axios.create({
-  // baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
-  baseURL:
-    process.env.NEXT_PUBLIC_NGROK_URL ||
-    process.env.NEXT_PUBLIC_API_BASE_URL ||
-    "http://localhost:8000",
-  headers: { "Content-Type": "application/json" },
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
+  //   baseURL:
+  //     process.env.NEXT_PUBLIC_NGROK_URL ||
+  //     process.env.NEXT_PUBLIC_API_BASE_URL ||
+  //     "http://localhost:8000",
+  //   headers: { "Content-Type": "application/json" },
 });
-
-
 
 /**
  * @description - adds access_token to the localStorage
